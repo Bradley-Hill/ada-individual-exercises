@@ -7,6 +7,6 @@ let randomNumber = () => {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
   
+let userGuess = document.getElementById('userGuess');
 
-  
   console.log(randomNumber());
