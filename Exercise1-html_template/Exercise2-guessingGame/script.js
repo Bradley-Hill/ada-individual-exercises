@@ -1,8 +1,9 @@
-let userGuess = document.getElementById('userGuess');
+var userGuess = document.getElementById('userGuess');
 let displayGuessResult = document.getElementById('highOrLow');
 let submitBtn = document.getElementById('submitBtn');
+let previousGuesses = document.getElementById('guessedNumbers')
 
-
+submitBtn.addEventListener('click', userGuessCheck)
 
 let generateRandomNumber = () => {
     let minRange = 1;
@@ -13,24 +14,21 @@ let generateRandomNumber = () => {
     return Math.floor(Math.random() * (max - min + 1) + min);
   };
 
-let randomNumber = generateRandomNumber();
+  let randomNumber = generateRandomNumber();
+
+let userGuessCheck = () => {};
+
+
   
-let userGuessCheck = () => {
-    let guess = parseInt(userGuess.value);
-
-    if (guess < randomNumber){
-        displayGuessResult.innerText = `You guessed ${guess}, 
-        that is too low! Guess again...`;
-    } else if (guess > randomNumber) {
-        displayGuessResult.innerText = `You guessed ${guess}, 
-        that is too high! Guess again...`;
-    } else {
-        displayGuessResult.innerText = `You guessed ${guess}, 
-        that is the same as ${randomNumber}, CORRECT!`;
-    }
-}
 
 
-submitBtn.addEventListener('click', userGuessCheck)
+
+
+
+
+
+
+
+
 
   console.log(randomNumber);
