@@ -33,27 +33,30 @@ function didIWin(givenNumber, randomNumber){
     }
 }
 
-function gamePlay(){
-    let gameOver = false;
-
-    while(!gameOver){
+function gamePlay() {
+    (function play() {
         let givenNumber = inputGivenNumber();
-        gameOver = didIWin(givenNumber);
+        let gameOver = didIWin(givenNumber, randomNumber);
 
-        if (gameOver){
+        if (gameOver) {
             userButton.disabled = true;
-            indicatorDisplay.innerHTML = `${givenNumber} is correct,well done! You win! GAME OVER`
+            indicatorDisplay.innerHTML = `${givenNumber} is correct, well done! You win! GAME OVER`;
+        } else {
+            setTimeout(play, 0);  // Call the function recursively after a short delay
         }
-    }
+    })();
 }
 
 let randomNumber = generateRandomNumber(1,100)
-// console.log(`The hidden number is ${randomNumber}`)
+console.log(`The hidden number is ${randomNumber}`)
+
+//Game is started here
+gamePlay();
 
 //Event listener for checking if the givenNumber is correct
 userButton.addEventListener('click', function () {
     let givenNumber = inputGivenNumber();
-    didIWin(givenNumber, randomNumber);
+    let gameOver = didIWin(givenNumber, randomNumber);
     if (randomNumber === givenNumber) {
         userButton.disabled = true;
     }
