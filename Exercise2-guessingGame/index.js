@@ -17,7 +17,7 @@ function inputGivenNumber(){
 }
 
 // Verify if the givenNumber is a match
-function didIWin(givenNumber){
+function didIWin(givenNumber, randomNumber){
     if(givenNumber < randomNumber){
         console.log(`Too small!`)
         indicatorDisplay.innerHTML = `${givenNumber} is too small! Try again`
@@ -53,11 +53,11 @@ let randomNumber = generateRandomNumber(1,100)
 //Event listener for checking if the givenNumber is correct
 userButton.addEventListener('click', function () {
     let givenNumber = inputGivenNumber();
-    let gameOver = didIWin(givenNumber, randomNumber);
-    if (randomNumber === givenNumber && gameOver) {
-      userButton.disabled = true;
+    didIWin(givenNumber, randomNumber);
+    if (randomNumber === givenNumber) {
+        userButton.disabled = true;
     }
-  });
+});
 
   userButton.addEventListener('click', function () {
     gamePlay(randomNumber);
