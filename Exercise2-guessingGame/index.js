@@ -58,7 +58,3 @@ userButton.addEventListener('click', function () {
         userButton.disabled = true;
     }
 });
-
-  userButton.addEventListener('click', function () {
-    gamePlay(randomNumber);
-  });
