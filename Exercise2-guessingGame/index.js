@@ -53,12 +53,12 @@ let randomNumber = generateRandomNumber(1,100)
 //Event listener for checking if the givenNumber is correct
 userButton.addEventListener('click', function () {
     let givenNumber = inputGivenNumber();
-    didIWin(givenNumber);
-    if(randomNumber === givenNumber){
-        userButton.disabled = true;
+    let gameOver = didIWin(givenNumber, randomNumber);
+    if (randomNumber === givenNumber && gameOver) {
+      userButton.disabled = true;
     }
   });
 
   userButton.addEventListener('click', function () {
-    gamePlay();
+    gamePlay(randomNumber);
   });
