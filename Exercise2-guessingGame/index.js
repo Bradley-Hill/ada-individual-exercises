@@ -44,7 +44,8 @@ function gamePlay() {
             userButton.disabled = true;
             indicatorDisplay.innerHTML = `${givenNumber} is correct, well done! You win! GAME OVER`;
         } else {
-            setTimeout(play, 0);  // Call the function recursively after a short delay
+            // Call the function recursively(in a loop) after a short delay
+            setTimeout(play, 10);  
         }
     })();
 }
