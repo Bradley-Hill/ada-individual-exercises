@@ -49,7 +49,7 @@ function play() {
     }
 
 
-let randomNumber = generateRandomNumber(1,100)
+let randomNumber = generateRandomNumber(1,50)
 console.log(`The hidden number is ${randomNumber}`)
 
 //Game is started here
