@@ -1,5 +1,6 @@
 const userGuessInput = document.getElementById('userGuess')
 const userButton = document.getElementById('guessBtn')
+const indicatorDisplay = document.getElementById('highOrLow')
 
 //Generates random whole number between 1 and 100(inclusive)
 function generateRandomNumber(min, max) {
@@ -19,15 +20,21 @@ function inputGivenNumber(){
 function didIWin(givenNumber){
     if(givenNumber < randomNumber){
         console.log(`Too small!`)
+        indicatorDisplay.innerHTML = `${givenNumber} is too small! Try again`
+        return false
     } else if (givenNumber > randomNumber){
         console.log(`Too big!`)
+        indicatorDisplay.innerHTML = `${givenNumber} is too big! Try again`
+        return false
     } else {
         console.log(`Correct!`)
+        indicatorDisplay.innerHTML = `${givenNumber} is correct,YOU WIN!!!`
+        return true
     }
 }
 
 let randomNumber = generateRandomNumber(1,100)
-console.log(`The hidden number is ${randomNumber}`)
+// console.log(`The hidden number is ${randomNumber}`)
 
 //Event listener for checking if the givenNumber is correct
 userButton.addEventListener('click', function () {
@@ -35,15 +42,17 @@ userButton.addEventListener('click', function () {
     didIWin(givenNumber);
   });
 
-function guessGame(){
-    
+function gamePlay(){
+    while(true){
     let givenNumber = inputGivenNumber();
     didIWin(givenNumber)
-
-
-
+    if(givenNumber === randomNumber){
+        indicatorDisplay.innerHTML = `${givenNumber} is correct, You WIN!!!    Game Over!`
+        break;
+    }
+    }
 }
 
 
-
-guessGame()
+// console.log(randomNumber)
+gamePlay()
