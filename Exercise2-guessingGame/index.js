@@ -35,8 +35,7 @@ function didIWin(givenNumber, randomNumber){
 
 //Using an IIFE for recursion over the code allowing for 
 // constant updates and disabling of button after game over.
-function gamePlay() {
-    (function play() {
+function play() {
         let givenNumber = inputGivenNumber();
         let gameOver = didIWin(givenNumber, randomNumber);
 
@@ -45,21 +44,21 @@ function gamePlay() {
             indicatorDisplay.innerHTML = `${givenNumber} is correct, well done! You win! GAME OVER`;
         } else {
             // Call the function recursively(in a loop) after a short delay
-            setTimeout(play, 10);  
+            setTimeout(play, 0);  
         }
-    })();
-}
+    }
+
 
 let randomNumber = generateRandomNumber(1,100)
 console.log(`The hidden number is ${randomNumber}`)
 
 //Game is started here
-gamePlay();
+play();
 
 //Event listener for checking if the givenNumber is correct
 userButton.addEventListener('click', function () {
     let givenNumber = inputGivenNumber();
-    let gameOver = didIWin(givenNumber, randomNumber);
+    didIWin(givenNumber, randomNumber);
     if (randomNumber === givenNumber) {
         userButton.disabled = true;
     }
