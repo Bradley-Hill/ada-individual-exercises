@@ -33,7 +33,7 @@ function didIWin(givenNumber, randomNumber){
     }
 }
 
-//Using an IIFE for recursion over the code allowing for 
+//Using recursion over the code allowing for 
 // constant updates and disabling of button after game over.
 function play() {
         let givenNumber = inputGivenNumber();
