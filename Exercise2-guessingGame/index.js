@@ -2,7 +2,7 @@ const userGuessInput = document.getElementById('userGuess')
 const userButton = document.getElementById('guessBtn')
 const indicatorDisplay = document.getElementById('highOrLow')
 
-//Generates random whole number between 1 and 100(inclusive)
+//Generates random whole number between 1 and 50(inclusive)
 function generateRandomNumber(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
