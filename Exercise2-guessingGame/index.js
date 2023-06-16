@@ -10,7 +10,6 @@ function generateRandomNumber(min, max) {
     return randomNumber;
 }
 
-
 function inputGivenNumber(){
     let givenNumber = userGuessInput.value
     return givenNumber
@@ -33,33 +32,20 @@ function didIWin(givenNumber, randomNumber){
     }
 }
 
-//Using recursion over the code allowing for 
-// constant updates and disabling of button after game over.
-function play() {
-        let givenNumber = inputGivenNumber();
-        let gameOver = didIWin(givenNumber, randomNumber);
-
-        if (gameOver) {
-            userButton.disabled = true;
-            indicatorDisplay.innerHTML = `${givenNumber} is correct, well done! You win! GAME OVER`;
-        } else {
-            // Call the function recursively(in a loop) after a short delay
-            setTimeout(play, 0);  
-        }
-    }
-
-
 let randomNumber = generateRandomNumber(1,50)
+//Console log so I can cheat the game.
 console.log(`The hidden number is ${randomNumber}`)
-
-//Game is started here
-play();
 
 //Event listener for checking if the givenNumber is correct
 userButton.addEventListener('click', function () {
     let givenNumber = inputGivenNumber();
+    let gameOver = didIWin(givenNumber, randomNumber);
     didIWin(givenNumber, randomNumber);
-    if (randomNumber === givenNumber) {
+    if (gameOver) {
+        userButton.disabled = true;
+        indicatorDisplay.innerHTML = `${givenNumber} is correct, well done! You win! GAME OVER`;
+        if (randomNumber === givenNumber) {
         userButton.disabled = true;
     }
+}
 });
