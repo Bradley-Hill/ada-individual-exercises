@@ -102,16 +102,19 @@ function decode(morseString){
 
 const latinTransBtn = document.getElementById("translateLatinBtn")
 const morseTransBtn = document.getElementById("translateMorseBtn")
-const latinWord = document.getElementById("latinInput").value
-const morseWord = document.getElementById("morseInput").value
+
+
 const resultDiv = document.getElementById("resultDiv");
 
 latinTransBtn.addEventListener("click", function() {
-  const encodedText = encode(latinWord.value);
-  resultDiv.innerHTML = encodedText;
-});
-
-morseTransBtn.addEventListener("click", function() {
-  const decodedText = decode(morseWord.value);
-  resultDiv.innerHTML = decodedText;
-});
+    const latinWord = document.getElementById("latinInput").value;
+    const encodedText = encode(latinWord);
+    resultDiv.innerHTML = encodedText;
+  });
+  
+  morseTransBtn.addEventListener("click", function() {
+    const morseWord = document.getElementById("morseInput").value;
+    const decodedText = decode(morseWord);
+    resultDiv.innerHTML = decodedText;
+  });
+  
