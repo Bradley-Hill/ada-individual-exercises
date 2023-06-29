@@ -100,3 +100,10 @@ function decode(morseString){
     return latinCode.join("");
 }
 
+const latinTransBtn = document.getElementById("translateLatinBtn")
+const morseTransBtn = document.getElementById("translateMorseBtn")
+const latinWord = document.getElementById("latinInput").value
+const morseWord = document.getElementById("morseInput").value
+
+latinTransBtn.addEventListener("click", encode(latinWord))
+morseTransBtn.addEventListener("click", decode(morseWord))
