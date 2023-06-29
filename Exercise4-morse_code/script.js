@@ -53,9 +53,6 @@ return morseCodes.join(" ");
 
 }
 
-encode("Hello, World")
-console.log(encode("Hello, World"));
-
 function decode(morseString){
 
     function getMorseCharacterList(morseString){
@@ -103,4 +100,3 @@ function decode(morseString){
     return latinCode.join("");
 }
 
-console.log(decode('.... . .-.. .-.. --- --..-- / .-- --- .-. .-.. -..'));
