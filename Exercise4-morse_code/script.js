@@ -47,6 +47,7 @@ const stringArray = getLatinCharacterList(string)
 // output an array of the transformed characters from stringArray
 const morseCodes = stringArray.map(translateLatinCharacters)
 
+
 //use join method to create a string with spaces between the items from stringArray
 console.log(morseCodes.join(" "));
 
