@@ -3,22 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="stylesheet" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <title>Morse Code</title>
   </head>
   <body>
-    <div id="content">
-      <form>
+    <div class="content">
+      <form class="form">
         <label for="LatinInput">Latin Word: </label>
-        <input type="text" name="LatinInput" value=" " id="LatinInput" />
+        <input type="text" name="LatinInput" placeholder="Word" id="LatinInput" />
+        <input type="button" value="Translate Latin" id="translateLatinBtn"></input>
 
         <label for="MorseInput">Morse Word: </label>
-        <input type="text" name="MorseInput" value=" " id="MorseInput" />
-
-        <input type="button" value="Translate Latin" id="translateLatinBtn"></form>
+        <input type="text" name="MorseInput" placeholder=".-- --- .-. -.." id="MorseInput" />    
         <input type="button" value="Translate Morse" id="translateMorseBtn"></input>
       </form>
-      <div id="resultDiv"></div>
+      <div id="resultDiv">Test Words</div>
     </div>
   </body>
   <script src="script.js"></script>

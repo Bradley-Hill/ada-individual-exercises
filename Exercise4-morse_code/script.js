@@ -107,13 +107,13 @@ const morseTransBtn = document.getElementById("translateMorseBtn")
 const resultDiv = document.getElementById("resultDiv");
 
 latinTransBtn.addEventListener("click", function() {
-    const latinWord = document.getElementById("latinInput").value;
+    const latinWord = document.getElementById("LatinInput").value;
     const encodedText = encode(latinWord);
     resultDiv.innerHTML = encodedText;
   });
   
   morseTransBtn.addEventListener("click", function() {
-    const morseWord = document.getElementById("morseInput").value;
+    const morseWord = document.getElementById("MorseInput").value;
     const decodedText = decode(morseWord);
     resultDiv.innerHTML = decodedText;
   });
