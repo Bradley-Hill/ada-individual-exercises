@@ -56,7 +56,7 @@ return morseCodes.join(" ");
 function decode(morseString){
 
     function getMorseCharacterList(morseString){
-        return morseString.split(/[\/ ]/);
+        return morseString.split(" ");
     }
 
     function translateMorseCharacters(char){
@@ -90,7 +90,9 @@ function decode(morseString){
         //added grammar to morse code dictionary
         '--..--':',',
         '.-.-.-':'.',
-        '/':' '
+      }
+      if (char === "/"){
+        return " ";
       }
       return morseToLatin[char];
     }
