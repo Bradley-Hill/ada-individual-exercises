@@ -3,13 +3,18 @@ function isValidDate(date){
     return dateRegex.test(date)
 }
 
-console.log(isValidDate('28/09/1999'))
+console.log(isValidDate('02/02/2020'))
 
 function isPallindrome(date){
     let dateArray = date.split('')
     let reversedArray = dateArray.slice().reverse()
+    dateArray = dateArray.filter((num)=>{return num !== '/';})
+    reversedArray = reversedArray.filter((num)=>{return num !== '/';})
     console.log(dateArray)
     console.log(reversedArray)
+    if(dateArray.join('') === reversedArray.join('')){
+        console.log('A pallindrome!')
+    }
 }
 
-isPallindrome('19/02/2678')
+isPallindrome('02/02/2020')
